@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0d0f12;
+  --bg-raised: #15181c;
+  --bg-raised-2: #1b1f24;
+  --paper: #ede7dd;
+  --ink: #f3f0e8;
+  --ink-dim: #a9a79f;
+  --ink-faint: #6d6b64;
+  --gold: #c99a4b;
+  --gold-bright: #e0b46a;
+  --teal: #4c7d73;
+  --teal-dim: #2c433e;
+  --line: rgba(243, 240, 232, 0.1);
+  --line-strong: rgba(243, 240, 232, 0.18);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: #171308;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.balance {
+  text-wrap: balance;
+}
