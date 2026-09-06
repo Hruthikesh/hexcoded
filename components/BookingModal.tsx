@@ -46,7 +46,7 @@ export default function BookingModal({
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Book a demo with Jivesh"
+      aria-label="Book a demo."
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm p-0 sm:p-6"
     >
       <div className="relative w-full sm:max-w-2xl h-[90vh] sm:h-[80vh] bg-[var(--bg-raised)] border border-[var(--line-strong)] rounded-t-lg sm:rounded-lg overflow-hidden flex flex-col">
@@ -54,7 +54,7 @@ export default function BookingModal({
           <div>
             <p className="text-[13px] text-[var(--ink-faint)]">Book a demo</p>
             <p className="font-display text-lg text-[var(--ink)]">
-              Time with Jivesh
+              Schedule a demo
             </p>
           </div>
           <button
@@ -82,7 +82,7 @@ export default function BookingModal({
               <p className="text-[15px] text-[var(--ink-dim)] max-w-sm">
                 Set <code className="text-[var(--gold-bright)]">NEXT_PUBLIC_CAL_LINK</code> to
                 your Cal.com event link (e.g.{" "}
-                <code className="text-[var(--gold-bright)]">jivesh/hexcoded-demo</code>) to turn
+                <code className="text-[var(--gold-bright)]">your-calcom-event-link</code>) to turn
                 this on.
               </p>
             </div>

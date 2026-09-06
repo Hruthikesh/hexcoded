@@ -8,7 +8,7 @@ type Message = { role: "user" | "assistant"; content: string };
 const GREETING: Message = {
   role: "assistant",
   content:
-    "I'm the HexCoded assistant. Ask me about the studio, the platform, or how HexCoded makes shows — or I can get you straight to a demo with Jivesh.",
+    "I'm the HexCoded assistant. Ask me about the studio, the platform, or how HexCoded makes shows — or I can get you straight to a demo",
 };
 
 export default function AgentWidget({
@@ -113,7 +113,7 @@ export default function AgentWidget({
                 Ask HexCoded
               </p>
               <p className="font-display text-lg text-[var(--ink)]">
-                Questions about the studio or platform
+                Questions about HexCoded
               </p>
             </div>
             <button
