@@ -53,8 +53,8 @@ Users can:
 
 ```text
 app/
-  api/agent/        # AI assistant API route
-  page.tsx          # Main landing page
+  api/agent/       
+  page.tsx          
 
 components/
   AgentWidget.tsx   # AI chat interface
