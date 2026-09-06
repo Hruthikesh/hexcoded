@@ -72,10 +72,14 @@ export async function POST(req: Request) {
     parts: [{ text: message.content }],
   }));
 
-  try {
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent",
-      {
+   try {
+    const geminiUrl =
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent";
+
+    let response: Response | null = null;
+
+    for (let attempt = 0; attempt < 3; attempt++) {
+      response = await fetch(geminiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,13 +94,36 @@ export async function POST(req: Request) {
             maxOutputTokens: 400,
           },
         }),
+      });
+
+      if (response.ok) {
+        break;
       }
-    );
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("[agent] Gemini request failed:", errorText);
+      const shouldRetry =
+        response.status === 408 ||
+        response.status === 429 ||
+        response.status === 503 ||
+        response.status >= 500;
 
+      if (!shouldRetry || attempt === 2) {
+        const errorText = await response.text();
+        console.error("[agent] Gemini request failed:", errorText);
+
+        return Response.json(
+          {
+            error:
+              "I'm having trouble reaching the assistant right now. Please try again in a moment, or book a demo directly.",
+          },
+          { status: 502 }
+        );
+      }
+
+      const delay = 500 * Math.pow(2, attempt);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+
+    if (!response || !response.ok) {
       return Response.json(
         {
           error:
