@@ -1,4 +1,4 @@
-# HexCoded — AI Filmmaking Studio
+# HexCoded - AI Filmmaking Studio
 
 A landing page built for the HexCoded hiring task, focused on showcasing HexCoded's AI filmmaking studio and platform.
 
@@ -53,18 +53,23 @@ Users can:
 
 ```text
 app/
-  api/agent/       
-  page.tsx          
+  api/agent/
+  page.tsx
 
 components/
-  AgentWidget.tsx   # AI chat interface
-  BookingModal.tsx  # Cal.com booking modal
-  Hero.tsx          # Hero section and video
-  ...               # Other landing page sections
+  AgentWidget.tsx
+  BookingModal.tsx
+  Hero.tsx
 
 lib/
-  brief.ts          # HexCoded company brief and AI instructions
+  brief.ts
 
 public/
   hexcoded-hero.mp4
   hexcoded-hero-poster.jpg
+```
+
+## License
+
+MIT License
+Built with curiosity and a lot of experimentation.
