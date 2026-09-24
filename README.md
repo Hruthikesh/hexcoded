@@ -1,6 +1,6 @@
 # HexCoded - AI Filmmaking Studio
 
-A landing page built for the HexCoded hiring task, focused on showcasing HexCoded's AI filmmaking studio and platform.
+A landing page built for the HexCoded, focused on showcasing HexCoded's AI filmmaking studio and platform.
 
 The site includes an AI assistant that answers questions about HexCoded using the provided company brief, along with a real Cal.com demo booking flow.
 
